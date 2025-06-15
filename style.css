@@ -109,6 +109,26 @@ h1 {
   box-shadow: 0 0 14px rgba(0, 255, 200, 0.5);
 }
 
+.back-button {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background: transparent;
+  color: #00ffe1;
+  border: 1px solid #00ffe1;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.back-button:hover {
+  background: #00ffe1;
+  color: #000;
+  transform: translateX(-3px);
+  box-shadow: 0 0 10px rgba(0, 255, 225, 0.3);
+}
+
 footer {
   margin-top: 40px;
   font-size: 14px;
