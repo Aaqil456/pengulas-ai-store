@@ -6,22 +6,6 @@
     "price": "RM19.00",
     "image": "images/ebook1.jpg",
     "link": "https://wa.me/60123456789?text=Hi+saya+nak+beli+eBook+AI"
-  },
-  {
-    "id": "ebook-2-akan-datang",
-    "title": "Ebook AI Kedua",
-    "description": "Akan datang tak lama lagi.",
-    "price": "RMXX.XX",
-    "image": "images/ebook2.jpg",
-    "link": "#"
-  },
-    {
-    "id": "ebook-3-akan-datang",
-    "title": "Ebook AI Kedua",
-    "description": "Akan datang tak lama lagi.",
-    "price": "RMXX.XX",
-    "image": "images/ebook2.jpg",
-    "link": "#"
   }
 ]
 
