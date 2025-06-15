@@ -14,6 +14,14 @@
     "price": "RMXX.XX",
     "image": "images/ebook2.jpg",
     "link": "#"
+  },
+    {
+    "id": "ebook-3-akan-datang",
+    "title": "Ebook AI Kedua",
+    "description": "Akan datang tak lama lagi.",
+    "price": "RMXX.XX",
+    "image": "images/ebook2.jpg",
+    "link": "#"
   }
 ]
 
