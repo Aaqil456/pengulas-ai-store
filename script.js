@@ -19,7 +19,6 @@ if (document.getElementById('product-list')) {
           <a href="product.html?id=${p.id}">
             <img src="${p.image}" alt="${p.title}">
             <h2>${p.title}</h2>
-            <p>${p.description}</p>
             <span class="price">${p.price}</span>
           </a>
         </div>`;
