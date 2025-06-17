@@ -34,12 +34,13 @@ if (document.getElementById('product-detail')) {
     const p = products.find(x => x.id === id);
     if (!p) return document.getElementById('product-detail').innerHTML = '<p>Produk tak jumpa.</p>';
     document.getElementById('product-detail').innerHTML = `
-      <a href="index.html" class="back-button">Kembali</a>
       <h1>${p.title}</h1>
       <img src="${p.image}" alt="${p.title}" class="ebook-cover">
       <p>${p.description}</p>
       <p class="price">${p.price}</p>
-      <a href="${p.link}" class="buy-button">📩 Beli Sekarang</a>`;
+      <a href="${p.link}" class="buy-button">📩 Beli Sekarang</a>
+      <a href="index.html" class="back-button">Kembali</a>
+      `;
   });
 }
 
