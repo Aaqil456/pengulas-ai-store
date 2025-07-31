@@ -38,7 +38,7 @@ if (document.getElementById('product-detail')) {
       <img src="${p.image}" alt="${p.title}" class="ebook-cover">
       <p>${p.description}</p>
       <p class="price">${p.price}</p>
-      <a href="${p.link}" class="buy-button">📩 Beli Sekarang</a>
+      <a href="${p.link}" class="buy-button">📩 Dapatkan Sekarang</a>
       <a href="index.html" class="back-button">Kembali</a>
       `;
   });
