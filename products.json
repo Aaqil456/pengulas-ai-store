@@ -6,6 +6,14 @@
     "price": "RM39.00",
     "image": "images/ebook1.jpg",
     "link": "https://toyyibpay.com/Dari-Skrip-Jadi-Video-AI"
+  },
+    {
+    "id": "kopi-bot",
+    "title": "Kopi Bot JSON",
+    "description": "Fail JSON ini adalah blueprint AI Assistant untuk sistem tempahan minuman seperti chatbot café. Sesuai digunakan untuk membuat voice ai agent bagi service fnb.",
+    "price": "Percuma",
+    "image": "images/kopi-bot.jpg",
+    "downloadLink": "https://pengulasai.com/files/kopi-bot.json"
   }
 ]
 
