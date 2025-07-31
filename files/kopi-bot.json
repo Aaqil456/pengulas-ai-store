@@ -1,0 +1,267 @@
+{
+  "name": "Kopi Bot",
+  "nodes": [
+    {
+      "name": "introduction",
+      "type": "conversation",
+      "isStart": true,
+      "metadata": {
+        "position": {
+          "x": 13.80487060546875,
+          "y": 11.414329528808594
+        }
+      },
+      "prompt": "You are a helpful café assistant. The user is either asking for the menu or directly placing a drink order. Respond warmly and guide the user toward ordering a drink. If they ask for the menu, read it to them. If they already ordered, confirm what they want",
+      "messagePlan": {
+        "firstMessage": "Hi, welcome to Kopi Bot – your friendly voice assistant for ordering coffee. Would you like to hear today’s menu or place your order now?"
+      },
+      "toolIds": []
+    },
+    {
+      "name": "Ask Drink",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 761.4146118164062,
+          "y": 31.414329528808594
+        }
+      },
+      "prompt": "Listen for a drink order from the user. Recognize one of the available drinks: Kopi O, Teh Tarik, Latte, or Iced Milo. Save the chosen drink to selected_drink. If multiple drinks are mentioned, just take the first one. Keep the response simple.",
+      "variableExtractionPlan": {
+        "output": [
+          {
+            "enum": [],
+            "type": "string",
+            "title": "selected_drink",
+            "description": "Recognize one of the available drinks: Kopi O, Teh Tarik, Latte, or Iced Milo. Save the chosen drink to selected_drink."
+          }
+        ]
+      },
+      "messagePlan": {
+        "firstMessage": "Today we have Kopi O, Teh Tarik, Latte, and Iced Milo. What would you like to order?"
+      },
+      "toolIds": []
+    },
+    {
+      "name": "conversation_1753961926408",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 1509.0243530273438,
+          "y": 51.414329528808594
+        }
+      },
+      "prompt": "\nConfirm if the user wants the drink stored in selected_drink. If they say yes, move to the next step. If not, go back to the drink selection step.",
+      "messagePlan": {
+        "firstMessage": "Just to confirm, you would like one {{selected_drink}}, right?"
+      },
+      "toolIds": []
+    },
+    {
+      "name": "conversation_1753962205177",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 2256.6340942382812,
+          "y": 807.9533615112305
+        }
+      },
+      "prompt": "Ask for a time. Listen for a clear time expression and save it as pickup_time. Accept formats like “2 PM”, “around noon”, or “in 30 minutes”. Normalize the time if possible.",
+      "variableExtractionPlan": {
+        "output": [
+          {
+            "enum": [],
+            "type": "string",
+            "title": "pickup_time",
+            "description": "Accept formats like “2 PM”, “around noon”, or “in 30 minutes”. Normalize the time if possible."
+          }
+        ]
+      },
+      "messagePlan": {
+        "firstMessage": "Great. What time would you like to pick up your drink?"
+      },
+      "toolIds": []
+    },
+    {
+      "name": "conversation_1753962406556",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 2256.6340942382812,
+          "y": 41.414329528808594
+        }
+      },
+      "prompt": "Listen for a drink order from the user. Recognize one of the available drinks: Kopi O, Teh Tarik, Latte, or Iced Milo. Save the chosen drink to selected_drink. If multiple drinks are mentioned, just take the first one. Keep the response simple.",
+      "variableExtractionPlan": {
+        "output": [
+          {
+            "enum": [],
+            "type": "string",
+            "title": "selected_drink",
+            "description": "Recognize one of the available drinks: Kopi O, Teh Tarik, Latte, or Iced Milo. Save the chosen drink to selected_drink"
+          }
+        ]
+      },
+      "messagePlan": {
+        "firstMessage": "Ok so what would you like"
+      },
+      "toolIds": []
+    },
+    {
+      "name": "conversation_1753962517791",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 3004.2438354492188,
+          "y": 807.9533615112305
+        }
+      },
+      "prompt": "Wrap up the conversation in a friendly tone. Confirm the drink and pickup time. End the conversation naturally and politely.",
+      "messagePlan": {
+        "firstMessage": "Your {{selected_drink}} will be ready for pickup at {{pickup_time}}."
+      },
+      "toolIds": []
+    },
+    {
+      "name": "conversation_1753962612883",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 3004.2438354492188,
+          "y": 51.414329528808594
+        }
+      },
+      "prompt": "Ask for a time. Listen for a clear time expression and save it as pickup_time. Accept formats like “2 PM”, “around noon”, or “in 30 minutes”. Normalize the time if possible.",
+      "variableExtractionPlan": {
+        "output": [
+          {
+            "enum": [],
+            "type": "string",
+            "title": "pickup_time",
+            "description": "Accept formats like “2 PM”, “around noon”, or “in 30 minutes”. Normalize the time if possible."
+          }
+        ]
+      },
+      "messagePlan": {
+        "firstMessage": "Great. What time would you like to pick up your drink?"
+      },
+      "toolIds": []
+    },
+    {
+      "name": "conversation_1753962755139",
+      "type": "conversation",
+      "metadata": {
+        "position": {
+          "x": 3751.8535766601562,
+          "y": 51.414329528808594
+        }
+      },
+      "prompt": "Wrap up the conversation in a friendly tone. Confirm the drink and pickup time. End the conversation naturally and politely.",
+      "messagePlan": {
+        "firstMessage": "Your {{selected_drink}} will be ready for pickup at {{pickup_time}}.\n"
+      },
+      "toolIds": []
+    },
+    {
+      "name": "hangup_1753962792083",
+      "type": "tool",
+      "metadata": {
+        "position": {
+          "x": 3751.8535766601562,
+          "y": 880.4533615112305
+        }
+      },
+      "tool": {
+        "type": "endCall"
+      }
+    },
+    {
+      "name": "hangup_1753962801039",
+      "type": "tool",
+      "metadata": {
+        "position": {
+          "x": 4499.463317871094,
+          "y": 123.9143295288086
+        }
+      },
+      "tool": {
+        "type": "endCall"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "introduction",
+      "to": "Ask Drink",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said \n“What drinks do you have?”\n\n“Show me the menu.”\n\n“I want to order coffee.”\n\n“Can I get a drink?”\n\n“Order now.”\n\n“Yes, I want to order.”\n\n“Let’s go.”"
+      }
+    },
+    {
+      "from": "Ask Drink",
+      "to": "conversation_1753961926408",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user say {{selected_drink}}"
+      }
+    },
+    {
+      "from": "conversation_1753961926408",
+      "to": "conversation_1753962205177",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said yes"
+      }
+    },
+    {
+      "from": "conversation_1753961926408",
+      "to": "conversation_1753962406556",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said no"
+      }
+    },
+    {
+      "from": "conversation_1753962205177",
+      "to": "conversation_1753962517791",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said {{pickup_time}}"
+      }
+    },
+    {
+      "from": "conversation_1753962406556",
+      "to": "conversation_1753962612883",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said {{selected_drink}}"
+      }
+    },
+    {
+      "from": "conversation_1753962612883",
+      "to": "conversation_1753962755139",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said {{pickup_time}}"
+      }
+    },
+    {
+      "from": "conversation_1753962517791",
+      "to": "hangup_1753962792083",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said yes"
+      }
+    },
+    {
+      "from": "conversation_1753962755139",
+      "to": "hangup_1753962801039",
+      "condition": {
+        "type": "ai",
+        "prompt": "if the user said yes"
+      }
+    }
+  ],
+  "globalPrompt": ""
+}
