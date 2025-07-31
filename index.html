@@ -2,21 +2,96 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8">
-  <title>Pengulas AI Store</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Senarai Produk</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+    }
+    .product-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .product-card h2 {
+      margin: 10px 0 5px;
+    }
+    .price {
+      font-weight: bold;
+      color: green;
+      margin-bottom: 15px;
+      display: block;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+    footer a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🛍️ Pengulas AI Store</h1>
-    <div id="product-list"></div>
 
-    <footer style="margin-top: 40px; text-align: center; font-size: 14px;">
-      <p>
-        <a href="privacy-policy.html">Dasar Privasi</a> |
-        <a href="terms-of-service.html">Terma Perkhidmatan</a>
-      </p>
-    </footer>
+  <h1>Senarai Produk</h1>
+
+  <!-- Produk 1: Ebook Biasa -->
+  <div class="product-card">
+    <img src="images/ebook1.jpg" alt="Dari Skrip Jadi Video">
+    <h2>Dari Skrip Jadi Video</h2>
+    <p class="price">RM39.00</p>
+    <p>Ebook ini adalah panduan praktikal dan lengkap untuk anda yang nak hasilkan video TikTok AI tanpa perlu tunjuk muka, suara sendiri, atau skill editing yang tinggi. Dalam buku ini, anda akan belajar cara buat avatar AI bercakap, tulis skrip guna ChatGPT, hasilkan suara robotik guna Clipchamp, dan edit semua itu dalam CapCut dengan langkah yang mudah diikuti.</p>
+    <a href="https://toyyibpay.com/Dari-Skrip-Jadi-Video-AI" class="button">📩 Dapatkan Sekarang</a>
   </div>
-  <script src="script.js"></script>
+
+  <!-- Produk 2: Fail JSON Muat Turun -->
+  <div class="product-card">
+    <img src="images/kopi-bot.jpg" alt="Kopi Bot AI Agent">
+    <h2>Kopi Bot AI Agent</h2>
+    <p class="price">Percuma</p>
+    <p>Fail JSON ini adalah blueprint AI Assistant untuk sistem tempahan minuman seperti chatbot café. Sesuai digunakan untuk membuat voice AI agent bagi service F&B.</p>
+    <a href="https://pengulasai.com/files/kopi-bot.json" download class="button">⬇️ Muat Turun Sekarang</a>
+  </div>
+
+  <!-- Footer -->
+  <footer style="margin-top: 40px; text-align: center; font-size: 14px;">
+    <p>
+      <a href="privacy-policy.html">Dasar Privasi</a> |
+      <a href="terms-of-service.html">Terma Perkhidmatan</a>
+    </p>
+  </footer>
+
 </body>
 </html>
