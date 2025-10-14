@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-gradient-hero">
+      {/* Theme Toggle */}
+      <div className="fixed top-6 right-6 z-50">
+        <ThemeToggle />
+      </div>
+
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <Link to="/">
           <Button variant="ghost" className="mb-8 gap-2">
