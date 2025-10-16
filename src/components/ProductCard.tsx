@@ -14,6 +14,7 @@ interface ProductCardProps {
   category?: string;
   trendingScore: number;
   className?: string;
+  onClick?: () => void;
 }
 
 export function ProductCard({
@@ -26,16 +27,20 @@ export function ProductCard({
   category,
   trendingScore,
   className,
+  onClick,
 }: ProductCardProps) {
   const isTrending = trendingScore >= 90;
   
   return (
-    <Card className={cn(
-      "group relative overflow-hidden bg-gradient-card p-6 transition-all duration-300",
-      "hover:shadow-card-hover hover:-translate-y-1",
-      "border border-border/50",
-      className
-    )}>
+    <Card 
+      className={cn(
+        "group relative overflow-hidden bg-gradient-card p-6 transition-all duration-300",
+        "hover:shadow-card-hover hover:-translate-y-1 cursor-pointer",
+        "border border-border/50",
+        className
+      )}
+      onClick={onClick}
+    >
       {/* Trending badge */}
       {isTrending && (
         <div className="absolute top-4 right-4">
@@ -73,22 +78,23 @@ export function ProductCard({
         </div>
         
         <Button
-          asChild
           className="bg-gradient-primary hover:opacity-90 transition-opacity"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick?.();
+          }}
         >
-          <a href={productLink} target="_blank" rel="noopener noreferrer">
-            {isFree ? (
-              <>
-                <Download className="mr-2 h-4 w-4" />
-                Muat Turun
-              </>
-            ) : (
-              <>
-                <ShoppingCart className="mr-2 h-4 w-4" />
-                Beli Sekarang
-              </>
-            )}
-          </a>
+          {isFree ? (
+            <>
+              <Download className="mr-2 h-4 w-4" />
+              Lihat Produk
+            </>
+          ) : (
+            <>
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              Lihat Produk
+            </>
+          )}
         </Button>
       </div>
     </Card>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductDialog } from "@/components/ProductDialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -32,6 +33,8 @@ export default function Index() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<"trending" | "newest">("trending");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
     fetchProducts();
@@ -197,6 +200,10 @@ export default function Index() {
                     isFree={product.is_free}
                     category={product.category_ms || undefined}
                     trendingScore={product.trending_score}
+                    onClick={() => {
+                      setSelectedProduct(product);
+                      setIsDialogOpen(true);
+                    }}
                   />
                 ))}
               </div>
@@ -235,6 +242,13 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Product Dialog */}
+      <ProductDialog
+        open={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        product={selectedProduct}
+      />
     </div>
   );
 }
