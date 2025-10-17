@@ -16,9 +16,10 @@ interface ProductDialogProps {
     category_ms: string | null;
     trending_score: number;
   } | null;
+  onProductClick?: (productId: string) => void; // New prop
 }
 
-export function ProductDialog({ open, onOpenChange, product }: ProductDialogProps) {
+export function ProductDialog({ open, onOpenChange, product, onProductClick }: ProductDialogProps) {
   if (!product) return null;
 
   const isTrending = product.trending_score >= 90;
@@ -81,6 +82,7 @@ export function ProductDialog({ open, onOpenChange, product }: ProductDialogProp
             size="lg"
             className="bg-gradient-primary hover:opacity-90 transition-opacity"
             asChild
+            onClick={() => onProductClick?.(product.id)} // Call onProductClick here
           >
             <a href={product.product_link} target="_blank" rel="noopener noreferrer">
               {product.is_free ? (

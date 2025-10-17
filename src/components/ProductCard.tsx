@@ -58,6 +58,17 @@ export function ProductCard({
         </Badge>
       )}
 
+      {/* Product Image */}
+      {imageUrl && (
+        <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+          <img 
+            src={imageUrl}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-contain"
+          />
+        </div>
+      )}
+
       {/* Title */}
       <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
         {title}

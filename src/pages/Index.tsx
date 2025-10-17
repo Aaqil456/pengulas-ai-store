@@ -40,6 +40,18 @@ export default function Index() {
     fetchProducts();
   }, []);
 
+  const handleProductClick = async (productId: string) => {
+    try {
+      const { error } = await supabase
+        .rpc("increment_trending_score", { product_id: productId });
+
+      if (error) throw error;
+      fetchProducts(); // Re-fetch products to update the trending score in the UI
+    } catch (error) {
+      console.error("Error incrementing trending score:", error.message || error);
+    }
+  };
+
   const fetchProducts = async () => {
     try {
       setLoading(true);
@@ -108,7 +120,7 @@ export default function Index() {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Sumber digital dan panduan AI terbaik untuk usahawan dan content creator Malaysia
+              Kompilasi sumber digital dan panduan AI di Malaysia
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -248,6 +260,7 @@ export default function Index() {
         open={isDialogOpen}
         onOpenChange={setIsDialogOpen}
         product={selectedProduct}
+        onProductClick={handleProductClick}
       />
     </div>
   );
